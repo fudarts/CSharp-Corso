@@ -122,15 +122,15 @@ projectManager.TeamSize = 20;
 //projectManager.DisplayBasicInfo(); // Polimorfismo ProjectManager
 
 // Creo un array di tre elementi 
-Employee[] employees1 = new Employee[3]; // dimensione predeterminata
+Employee[] employee2 = new Employee[3]; // dimensione predeterminata
 // Popolo l'array con gli oggetti
-employees1[0] = dev;
-employees1[1] = salesPerson;
-employees1[2] = projectManager;
+employee2[0] = dev;
+employee2[1] = salesPerson;
+employee2[2] = projectManager;
 
-for (int z = 0; z < employees1.Length; z++)
+for (int z = 0; z < employee2.Length; z++)
 {
-    employees1[z].DisplayBasicInfo();
+    employee2[z].DisplayBasicInfo();
 }
 
 // Creo una lista vuota di oggetti di tipo Employee
@@ -153,3 +153,26 @@ foreach (KeyValuePair<int, Employee> item in dictemployees)
     item.Value.DisplayBasicInfo();
 }
 
+// Uso la classe Company
+Console.WriteLine("Utilizzo la classe Company");
+Company company = new Company();
+
+company.AddEmployee(dev);
+company.AddEmployee(salesPerson);
+company.AddEmployee(projectManager);
+company.ListAllEmployees();
+
+// Ora cerchiamo i dipendenti dal nostro input
+/* Messo tra commenti per non interferire con il seguente esempio
+ * var items = company.FindByName("Gino");
+ * Console.WriteLine("Trovati: " + items.Count + " dipendenti di nome Gino.");
+ */
+
+// Invece adesso lo cerchiamo attraverso un input esterno
+Console.WriteLine("Inserisci il nome da cercare: "); // Per test scrivere Paolo
+string search = Console.ReadLine();
+if(search != null)
+{
+    var items = company.FindByName(search);
+    Console.WriteLine("Trovati: " + items.Count + " dipendenti di nome " + search);
+}
