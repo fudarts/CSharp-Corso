@@ -79,12 +79,33 @@ Console.WriteLine(myBuilder.ToString());
 Console.WriteLine(typeof(Persona));
 
 // Creo l'oggetto e gli assegno dei dati
-Persona persona1 = new Persona("Gianmarco", "Friggitelli", new DateOnly(1994, 01, 23));
+Persona persona1 = new Persona("Massimo", "Dolore", new DateOnly(2001, 7, 23));
 // In questo caso lo sto assegnando manualmente
 persona1.CF = "AF3FS3SCNG54HI5";
 persona1.Email = "gianmarchini82@gmail.com";
 
 // Adesso printo tutto, con un metodo scritto in person.cs
 persona1.DisplayBasicInfo();
+
+/* Una volta creata la funzione sarà possibile usarla per
+ * calcolare l'età della persona, tuttavia ho scelto di
+ * rendere la funzione privata e di trasformarla in
+ * una proprietà dell'oggetto.
+ */
+// Così è come sarebbe con la funzione
+// Console.WriteLine(persona1.GetAge());
+
+// Così invece chiamiamo la funzione attraverso la proprietà
+Console.WriteLine(persona1.Age);
+
+// Andiamo a definire un employee
+Employee employee1 = new Employee("Samuele", "Pescatore", new DateOnly(2002, 11, 18), 1, "Spy Agency", 100000.00M);
+
+// Questo comando triggera l'ArgumentException come prova
+// employee.CompanyName = "";
+
+// Andiamo a stampare tutto
+employee1.DisplayBasicInfo();
+Console.WriteLine("Età: " + employee1.Age);
 
 
