@@ -1,0 +1,3 @@
+Moby Dick;Melville;1851
+I Promessi Sposi;Alessandro Manzoni;1827
+La Divina Commedia;Dante Alighieri;1321

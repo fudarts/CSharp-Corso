@@ -54,7 +54,7 @@ namespace CSharpCorso
 
         internal List<Employee> FindByName(string name)
         {
-            var elements = Employees.FindAll(el => el.Nome == name);
+            List<Employee> elements = Employees.FindAll(el => el.Nome == name);
             return elements;
         }
     }
